@@ -1,11 +1,11 @@
 {
   "name": "xingwangzhe/license_checker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "deps": {
     "moonbitlang/x": "0.4.38"
   },
   "readme": "README.mbt.md",
-  "repository": "https://github.com/xingwangzhe/license_checker",
+  "repository": "https://github.com/xingwangzhe/moonbit_license_checker",
   "license": "MIT",
   "keywords": [
     "license",
