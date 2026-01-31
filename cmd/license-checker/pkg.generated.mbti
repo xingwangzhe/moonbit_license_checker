@@ -1,0 +1,28 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "xingwangzhe/license_checker/cmd/license-checker"
+
+// Values
+pub fn build_report(String) -> Json
+
+pub fn build_report_from_moonmods(String) -> Json
+
+pub fn collect_moonmod_files(String) -> Array[String]
+
+pub fn detect_moonmod(String) -> String?
+
+pub fn format_json(Json) -> String
+
+pub fn format_txt(Json) -> String
+
+pub fn output(Json, String, String?) -> Unit
+
+pub fn read_license_from_moonmod(String) -> String?
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

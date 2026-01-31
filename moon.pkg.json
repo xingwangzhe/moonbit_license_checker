@@ -1,6 +1,7 @@
 {
     "name": "license_checker",
     "version": "0.1.0",
+    "default-target": "native",
     "deps": {
         "moonbitlang/x": "0.4.38"
     },

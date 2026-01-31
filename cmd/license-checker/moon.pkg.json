@@ -1,5 +1,6 @@
 {
     "is-main": true,
+    "default-target": "native",
     "import": [
         {
             "path": "moonbitlang/core/env",
