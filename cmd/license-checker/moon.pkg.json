@@ -1,0 +1,21 @@
+{
+    "is-main": true,
+    "import": [
+        {
+            "path": "moonbitlang/core/env",
+            "alias": "env"
+        },
+        {
+            "path": "moonbitlang/x/fs",
+            "alias": "fs"
+        },
+        {
+            "path": "moonbitlang/core/json",
+            "alias": "json"
+        },
+        {
+            "path": "moonbitlang/x/path",
+            "alias": "path"
+        }
+    ]
+}

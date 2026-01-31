@@ -1,0 +1,25 @@
+# Ignore MoonBit build artifacts
+_build/
+.moon-lock
+
+# Ignore compiled files
+*.mi
+*.core
+*.moon_db
+*.o
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Ignore dependency folders
+node_modules/
+.mooncakes/

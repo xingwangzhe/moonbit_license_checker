@@ -1,0 +1,13 @@
+{
+    "name": "license_checker",
+    "version": "0.1.0",
+    "deps": {
+        "moonbitlang/x": "0.4.38"
+    },
+    "files": [
+        "cmd/main/main.mbt",
+        "cmd/main/file_reader.mbt",
+        "cmd/main/license_parser.mbt",
+        "cmd/main/report_generator.mbt"
+    ]
+}
