@@ -1,0 +1,8 @@
+import {
+  "./cmd/license-checker" @license_checker,
+}
+
+options(
+  files: [ ],
+  "is-main": true,
+)

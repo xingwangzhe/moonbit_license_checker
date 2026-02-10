@@ -28,10 +28,18 @@ moonbit:
 moon install xingwangzhe/license_checker/cmd/license-checker
 ```
 
+说明：MoonBit 0.8 的 `moon install` 需要安装 **可执行包**（`is-main: true`），本项目的可执行包位于 `cmd/license-checker`。
+因此 **不要** 使用 `moon install xingwangzhe/license_checker`（root 包不是 main）。
+
+Note: In MoonBit 0.8, `moon install` installs **executable packages** (`is-main: true`).
+The executable package is `cmd/license-checker`, so **do not** use `moon install xingwangzhe/license_checker` (the root package is not main).
+
 安装后，确保 `~/.moon/bin` 在 `PATH` 中，然后运行：
 
+After installation, make sure `~/.moon/bin` is in your `PATH`, then run:
+
 ```bash
-license-checker.exe --format json --output licenses.json [input-path]
+license-checker --format json --output licenses.json [input-path]
 ```
 
 ### 方式 2: 作为项目依赖 / Method 2: As Project Dependency
@@ -42,6 +50,8 @@ moon add xingwangzhe/license_checker
 
 然后在代码中导入：
 
+Then import it in code:
+
 ```moonbit
 import "xingwangzhe/license_checker"
 ```
@@ -50,11 +60,15 @@ import "xingwangzhe/license_checker"
 
 从 [GitHub Releases](https://github.com/xingwangzhe/moonbit_license_checker/releases) 下载对应平台的二进制文件。
 
+Download the prebuilt binary for your platform from [GitHub Releases](https://github.com/xingwangzhe/moonbit_license_checker/releases).
+
 ## 使用方法 / Usage
 
 ### 开发模式 / Development Mode
 
 从源代码构建并运行：
+
+Build and run from source:
 
 ```bash
 moon build
@@ -65,6 +79,8 @@ moon run ./cmd/license-checker -- --format json --output licenses.json [input-pa
 
 构建原生发布版本：
 
+Build the native release binary:
+
 ```bash
 moon build --target native --release
 ./target/native/release/build/cmd/license-checker/license-checker.exe \
@@ -74,22 +90,29 @@ moon build --target native --release
 ### 命令行参数 / Command Line Arguments
 
 - `--format <format>`: 输出格式，支持 `json` 或 `txt`（默认: `json`）
+- `--format <format>`: Output format, `json` or `txt` (default: `json`).
 - `--output <path>`: 输出文件路径（可选；不指定则输出到标准输出）
+- `--output <path>`: Output file path (optional; omit to print to stdout).
 - `<input>`: 输入路径或 packages.json 文件（可选；默认扫描 `.mooncakes` 或当前目录 `.`）
+- `<input>`: Input path or packages.json (optional; defaults to `.mooncakes` or current directory `.`).
 
 ### 示例 / Examples
 
 ```bash
 # 生成 JSON 报告到文件
+# Generate a JSON report to a file
 license-checker.exe --format json --output licenses.json
 
 # 生成 TXT 报告到标准输出
+# Generate a TXT report to stdout
 license-checker.exe --format txt
 
 # 扫描指定目录
+# Scan a specific directory
 license-checker.exe --format json .mooncakes
 
 # 从 packages.json 读取包信息
+# Read package info from packages.json
 license-checker.exe --format json target/wasm-gc/release/check/all_pkgs.json
 ```
 
@@ -127,27 +150,34 @@ pkg-bUNKNOWN-
 
 | 版本 / Version | 日期 / Date | 说明 / Description |
 |---|---|---|
-| 0.2.1 | 2026-02-10 | 更新到 MoonBit 0.8.0、迁移到新包配置格式 moon.pkg、支持原生二进制分发 |
-| 0.1.3 | 2026-01-XX | 初始发布版本 |
-| 0.1.0 | 2025-XX-XX | 原始实验版本 |
+| 0.2.1 | 2026-02-10 | 更新到 MoonBit 0.8.0、迁移到新包配置格式 moon.pkg、支持原生二进制分发 / Update to MoonBit 0.8.0, migrate to moon.pkg, support native binary distribution |
+| 0.1.3 | 2026-01-XX | 初始发布版本 / Initial release |
+| 0.1.0 | 2025-XX-XX | 原始实验版本 / Early experimental release |
 
 ## 更新日志 / Changelog
 
 ### v0.2.1
 
 - ✨ 更新为 MoonBit 0.8.0 兼容版本
+- ✨ Update for MoonBit 0.8.0 compatibility
 - 🔧 迁移 `moon.pkg.json` 到新的 `moon.pkg` DSL 配置格式
+- 🔧 Migrate from `moon.pkg.json` to the new `moon.pkg` DSL
 - 📦 支持原生二进制构建与分发（`moon build --target native --release`）
+- 📦 Support native binary build and distribution (`moon build --target native --release`)
 - 📝 完善文档与使用说明
+- 📝 Improve docs and usage notes
 
 ### v0.1.3
 
 - 🐛 修复许可证解析的边界情况
+- 🐛 Fix edge cases in license parsing
 - 📚 改进错误提示信息
+- 📚 Improve error messages
 
 ### v0.1.0
 
 - ✅ 初始功能完成：自动检测 `moon.mod.json`、JSON/TXT 输出、灵活参数解析
+- ✅ Initial features: detect `moon.mod.json`, JSON/TXT output, flexible args
 
 ## 许可证 / License
 
